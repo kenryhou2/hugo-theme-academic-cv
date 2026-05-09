@@ -16,7 +16,7 @@ sections:
         text: Download CV
         url: assets/files/Henry_Kou_Resume_S25.pdf
       headings:
-        about: ''
+        about: 'About Me'
         education: ''
         interests: ''
     design:

@@ -15,12 +15,14 @@ tags:
   - ARPA-E
 ---
 
-ARPA-E Pipe Inspection is confined-space robotics work focused on inspection crawler hardware, sensing, and mapping workflows for pipe environments.
+I worked on this as a confined-space robotics problem: how do you make an inspection robot useful when the environment is narrow, dark, repetitive, and hard to instrument? Pipe inspection is not just a mobility problem. The robot also has to keep enough sensing coverage and map consistency for an operator to understand where defects or misalignments are located.
 
-The migrated project media includes the inspection crawler, mapping misalignment visualization, and field hardware photos. The work connects robot hardware, embedded sensing, and mapping interfaces for inspection in constrained environments.
+My work connected crawler hardware, embedded sensing, and mapping interfaces. The mapping GUI below shows the kind of alignment problem that comes up when local sensor observations have to be stitched into a coherent pipe-scale view. In a pipe, small pose errors are easy to hide visually but can become large localization errors along the run, so the inspection interface needs to expose uncertainty and misalignment clearly rather than only showing a polished map.
 
 ![ARPA-E mapping misalignment GUI](mapping_misalignment_GUI.gif)
 
 ![Henry with pipe crawler](henry_pipe_crawler.png)
+
+**Sources I leaned on:** Thrun, Burgard, and Fox's *Probabilistic Robotics* for the localization and mapping mindset; Grisetti, Kummerle, Stachniss, and Burgard's graph-based SLAM tutorial for pose-graph thinking; and pipe/cave robot literature from CMU's confined-space robotics work for practical constraints on mobility, sensing, and operator feedback.
 
 **Keywords:** ARPA-E, pipe inspection, confined-space robotics, crawler robot, mapping, sensing, embedded systems, inspection robotics.

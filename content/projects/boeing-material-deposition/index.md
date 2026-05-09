@@ -13,11 +13,13 @@ tags:
   - Boeing
 ---
 
-Ultra Large Format Additive Manufacturing (ULF-AM) systems, which deposit material for large-scale maintenance and construction such as aircraft and bridges, are highly susceptible to severe vibrations due to their massive size and low structural stiffness. As the reach of these systems increases, they experience disproportionately greater vibration sensitivity while also needing to execute high-precision manufacturing tasks, such as material deposition.
+I am working on a process-control idea for ultra-large-format additive manufacturing, where the robot is big enough that structural vibration becomes part of the manufacturing process. If a long-reach system is depositing material for aircraft, bridge, or infrastructure repair, the tool may be commanded to move smoothly while the actual nozzle is still oscillating.
 
-Consequently, conventional motion control strategies are insufficient to maintain deposition quality due to modeling uncertainty and plant bandwidth constraints. To address this limitation, we introduce a novel process-control approach that shifts the focus from motion correction to deposition scheduling. Rather than relying solely on motion controllers, our method dynamically adapts the material deposition frequency to account for uncompensated vibrations.
+The key shift is to stop treating motion control as the only place to fix the error. A low-stiffness plant may not have enough bandwidth or model certainty to fully cancel the vibration, but the deposition process can still react to the measured tool motion. My approach changes the deposition timing and rate based on real-time trajectory deviation, so material lands more evenly even when the tool path is imperfect.
 
-By outfitting the deposition tool with high-resolution, high-bandwidth sensing, the system computes real-time trajectory deviations and adjusts the timing and rate of material deposition accordingly. We validate this approach using a custom-developed testbench designed to emulate ULF-AM processes. Extensive hardware testing demonstrates that our process-control methodology significantly improves manufacturing quality, yielding evenly distributed material deposition and eliminating the uneven banding typically caused by uncompensated system vibrations.
+I validate the idea on a custom testbench that emulates the deposition dynamics. The sensor measures high-bandwidth tool motion, the controller estimates deviation from the desired path, and the process layer schedules material output around the residual vibration. The practical lesson is that process quality can sometimes be improved by controlling when material is added, not only by trying to make the structure perfectly still.
+
+**Sources I leaned on:** Altintas' work on manufacturing automation and process control; input-shaping literature from Singer and Seering for vibration-aware motion; and additive-manufacturing control papers on bead geometry, melt-pool monitoring, and closed-loop deposition rate control.
 
 **Status:** In progress.
 

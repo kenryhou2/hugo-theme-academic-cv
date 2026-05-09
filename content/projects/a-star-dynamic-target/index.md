@@ -16,10 +16,12 @@ tags:
   - robotics
 ---
 
-This project implements a dynamic target pursuit planner for grid maps from CMU 16-782 coursework. The robot receives a known target trajectory and, at every planning tick, searches in `(x, y, t)` space for an interception state where the robot and target occupy the same cell at the same time.
+I built this planner to answer a simple pursuit question: if the target is moving on a cost map and I know its future trajectory, where should the robot move next? Instead of planning only in `(x, y)`, I lift the search into `(x, y, t)` so an interception is defined as both agents occupying the same cell at the same time.
 
-The core planner is a C++ weighted A* search over 8-connected grid motion plus a wait action. Edge costs come from the destination cell cost, cells at or above the collision threshold are rejected, and the planner returns only the first step of the best found path so it can replan in a receding-horizon loop as the target advances.
+The core method is weighted A* over 8-connected grid motion plus a wait action. The edge cost comes from the destination cell, cells above the collision threshold are treated as blocked, and the planner returns only the first action from the best path. That receding-horizon structure matters because the useful plan changes as the target advances.
 
-The implementation includes several repo-specific accelerations and heuristics: runtime-tunable `eps`, `time_budget_ms`, and `heu_band` parameters; a cached multi-source Dijkstra table over feasible near-future target cells; a static meet-point heuristic chosen by travel cost plus wait time; and deterministic priority-queue tie breaking on `f`, `h`, `g`, and packed state keys. The repository also includes map files, recorded robot trajectories such as `rtraj_map*.txt`, and a Matplotlib `visualizer.py` script that animates the robot and target trajectories over the cost map.
+The interesting engineering detail is the heuristic. I cache a multi-source Dijkstra table from feasible near-future target cells, then combine that with a static meet-point estimate chosen by travel cost plus wait time. The implementation also exposes `eps`, `time_budget_ms`, and `heu_band` so I can trade optimality against response time, and it uses deterministic priority-queue tie breaking on `f`, `h`, `g`, and packed state keys. The repo includes map files, recorded robot trajectories such as `rtraj_map*.txt`, and a Matplotlib visualizer for replaying the pursuit.
+
+**Sources I leaned on:** Hart, Nilsson, and Raphael's 1968 A* paper for best-first graph search; Pearl's heuristic-search framing; and Koenig and Likhachev's D* Lite work as background for why replanning problems often need incremental or receding-horizon structure.
 
 **Keywords:** weighted A*, time-expanded A*, dynamic target pursuit, receding-horizon replanning, 8-connected grid search, wait action, collision threshold, cost map, multi-source Dijkstra, static meet point, trajectory visualization, C++, CMake, Python, Matplotlib.

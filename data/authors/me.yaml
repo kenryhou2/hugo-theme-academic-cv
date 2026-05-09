@@ -12,9 +12,11 @@ status:
   icon: ""
 role: MS Robotics Student and Research Associate
 bio: |
-  I am a graduate student at Carnegie Mellon University working on robotics
-  systems that combine embedded hardware, sensors, control, planning, and
-  optimization. I am currently in the Biorobotics Lab under Dr. Howie Choset.
+  I am an MS Robotics student at Carnegie Mellon University with a background
+  in electrical and computer engineering and a focus on state estimation,
+  control theory, motion planning, and embedded robotic systems. As a research
+  associate in the Biorobotics Lab, I work on building reliable, sensor-driven
+  robots that connect theory with hardware and real-world autonomy.
 
 affiliations:
   - name: Carnegie Mellon University Robotics Institute
