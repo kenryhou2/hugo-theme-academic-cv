@@ -246,3 +246,81 @@ Released under the [MIT License](./LICENSE.md).
 <!--START_SECTION:news-->
 <!--Updated at 2026-05-03T01:50:25.897Z-->
 <!--END_SECTION:news-->
+
+---
+
+## Henry Kou Website Notes
+
+This repository currently keeps the Hugo site in `hugo-theme-academic-cv/` and the previous Jekyll site in `old/`. The Hugo content has been started with:
+
+- Homepage bio and research direction migrated from `old/index.md`.
+- Author profile updated in `data/authors/me.yaml`.
+- Old site images copied to `static/assets/img/`.
+- Old resume copied to `static/assets/files/Henry_Kou_Resume_S25.pdf`.
+- A new Projects page at `content/projects/` with entries for:
+  - MPPI Wheeled Quadruped
+  - Manipulation Course Assignments
+  - Queue up for Claude
+  - Symbolic Planner
+  - Sampling Based Planners
+  - A* Pursuit of Dynamic Target
+
+## Old Site Migration Task List
+
+Use this checklist to finish migrating content from the old site into the Hugo template:
+
+1. Expand `content/_index.md` with a tighter personal summary, current lab status, and preferred contact links.
+2. Convert each old “Current Projects” item into its own Hugo project page:
+   - Medusa Space Arms
+   - EigenBot
+   - Boeing Material Deposition
+   - ARPA-E Pipe Inspection
+3. Add one representative GIF or image per project as `featured.*` so project cards render with useful visual previews.
+4. Replace every “Demo GIF placeholder” line in the new repo project pages with an actual `demo.gif` and a short caption.
+5. Verify the resume path and update `static/assets/files/Henry_Kou_Resume_S25.pdf` whenever the PDF changes.
+6. Remove or rewrite the remaining template demo blog, course, publication, and event content if those sections are not needed.
+7. Add polished copy for research interests, technical skills, publications, and lab/project outcomes as they become available.
+8. Review all external links, especially GitHub repository links and LinkedIn/contact links, before publishing.
+
+## Hosting Guide
+
+### Local Preview
+
+Install Hugo Extended and Node.js, then run the site from the Hugo project folder:
+
+```bash
+cd hugo-theme-academic-cv
+npm install
+npx hugo server --disableFastRender
+```
+
+Open the local URL printed by Hugo, usually `http://localhost:1313/`.
+
+### Production Build
+
+From `hugo-theme-academic-cv/`:
+
+```bash
+npm install
+npx hugo --minify
+```
+
+The generated static site will be in `hugo-theme-academic-cv/public/`.
+
+### GitHub Pages
+
+For a user site at `https://kenryhou2.github.io/`, keep `baseURL` set in `config/_default/hugo.yaml`:
+
+```yaml
+baseURL: 'https://kenryhou2.github.io/'
+```
+
+Recommended GitHub Pages workflow:
+
+1. Commit the Hugo site source.
+2. Add a GitHub Actions workflow that installs Hugo Extended and Node.js.
+3. Run `npm install` and `npx hugo --minify` from `hugo-theme-academic-cv/`.
+4. Upload `hugo-theme-academic-cv/public/` as the GitHub Pages artifact.
+5. In repository settings, set Pages to deploy from GitHub Actions.
+
+Do not deploy from the old Jekyll `old/` folder. It is retained only as migration source material.

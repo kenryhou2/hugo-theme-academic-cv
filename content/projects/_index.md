@@ -8,10 +8,11 @@ sections:
   - block: collection
     content:
       title: Selected Projects
-      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
+      text: Robotics, planning, automation, lab research, and course projects with source links, media, and technical summaries.
       filters:
         folders:
           - projects
+      count: 20
     design:
       view: article-grid
       fill_image: false

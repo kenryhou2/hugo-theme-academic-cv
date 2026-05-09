@@ -1,0 +1,22 @@
+<script>
+  (function () {
+    function lockDarkTheme() {
+      try {
+        localStorage.setItem("wc-color-theme", "dark");
+      } catch (error) {
+        /* Ignore blocked storage and keep the DOM-level fallback below. */
+      }
+
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+
+    lockDarkTheme();
+
+    if (window.hbb) {
+      window.hbb.defaultTheme = "dark";
+      window.hbb.setLightTheme = lockDarkTheme;
+      window.hbb.setDarkTheme = lockDarkTheme;
+    }
+  })();
+</script>

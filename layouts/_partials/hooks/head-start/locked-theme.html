@@ -1,0 +1,12 @@
+<script>
+  (function () {
+    try {
+      localStorage.setItem("wc-color-theme", "dark");
+    } catch (error) {
+      /* Ignore blocked storage and keep the DOM-level fallback below. */
+    }
+
+    document.documentElement.classList.add("dark");
+    document.documentElement.style.colorScheme = "dark";
+  })();
+</script>
