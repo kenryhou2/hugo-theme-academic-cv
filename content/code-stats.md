@@ -1,6 +1,6 @@
 ---
 title: Code Statistics
-summary: A secret-free code statistics dashboard with public WakaTime SVG embeds.
+summary: Coding activity and portfolio stack snapshots.
 date: 2026-05-24
 type: landing
 
@@ -9,7 +9,7 @@ sections:
     id: code-statistics
     content:
       title: Code Statistics Dashboard
-      subtitle: Public WakaTime charts and portfolio metrics, rendered without exposing private API credentials.
+      subtitle: Coding activity from WakaTime alongside a portfolio stack snapshot.
     design:
       spacing:
         padding: ["5rem", "0", "5rem", "0"]
