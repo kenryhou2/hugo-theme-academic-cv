@@ -1,8 +1,8 @@
 status:
-  source_label: Static portfolio snapshot
-  last_updated: 2026-05-22
+  source_label: Public WakaTime embeds
+  last_updated: 2026-05-24
   live_wakatime: false
-  note: Live WakaTime data is not connected. This dashboard intentionally avoids client-side API keys and can be updated from WakaTime embeddable JSON later.
+  note: This dashboard uses public WakaTime share SVGs and checked-in portfolio data without exposing private API credentials.
 
 metrics:
   - label: Published code projects
@@ -15,8 +15,8 @@ metrics:
     value: "1"
     detail: Dashboard values are centralized in data/code_stats.yaml.
   - label: WakaTime fields needed
-    value: "3"
-    detail: Username, public embeddable JSON URL, and preferred stats range.
+    value: "2"
+    detail: Public profile URL and public SVG share URLs.
 
 stack_snapshot:
   title: Portfolio Stack Snapshot
@@ -43,9 +43,20 @@ integration_path:
   - title: Static dashboard scaffold
     status: Complete
     detail: Hugo renders a dashboard from checked-in data without external calls.
-  - title: WakaTime embeddable JSON
-    status: Needed
-    detail: Add a public embeddable JSON URL to replace or supplement the static snapshot.
+  - title: WakaTime public SVG embeds
+    status: Complete
+    detail: Public WakaTime share charts are rendered directly on the code stats page.
   - title: Server-side API sync
     status: Optional
     detail: If private API stats are preferred, fetch them during build or from a trusted server, never in browser code.
+
+wakatime:
+  profile_url: "https://wakatime.com/@ea210b30-ed86-4643-a00c-1a369bb5f0f9"
+  link_label: View WakaTime profile
+  embeds:
+    - title: Coding Activity
+      image_url: "https://wakatime.com/share/@ea210b30-ed86-4643-a00c-1a369bb5f0f9/be946e8b-5fb5-4505-8558-34791c74469a.svg"
+      alt: "WakaTime coding activity profile stats"
+    - title: Coding Languages
+      image_url: "https://wakatime.com/share/@ea210b30-ed86-4643-a00c-1a369bb5f0f9/28e477f6-caf6-47c1-851a-82d2e2abf0eb.svg"
+      alt: "WakaTime coding languages profile stats"

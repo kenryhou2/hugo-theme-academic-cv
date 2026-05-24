@@ -8,20 +8,20 @@ main:
     url: /
     weight: 10
   - name: Experience
-    url: experience/
+    url: /experience/
     weight: 20
   - name: Projects
-    url: projects/
+    url: /projects/
     weight: 30
   - name: Demos
-    url: demos/
+    url: /demos/
     weight: 31
   - name: Skills
-    url: skills/
+    url: /skills/
     weight: 32
   - name: Code Stats
-    url: code-stats/
+    url: /code-stats/
     weight: 35
   - name: Publications
-    url: publications/
+    url: /publications/
     weight: 40

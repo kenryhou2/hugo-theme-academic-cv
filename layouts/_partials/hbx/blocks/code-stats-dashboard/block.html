@@ -8,6 +8,9 @@
 {{ $stack := $stats.stack_snapshot | default dict }}
 {{ $stack_items := $stack.items | default slice }}
 {{ $integration_path := $stats.integration_path | default slice }}
+{{ $wakatime := $stats.wakatime | default dict }}
+{{ $wakatime_embeds := $wakatime.embeds | default slice }}
+{{ $wakatime_profile_url := $wakatime.profile_url | default "" }}
 
 <div class="mx-auto w-full max-w-screen-xl px-6 md:px-12">
   <div class="mb-10 max-w-3xl">
@@ -23,12 +26,52 @@
   </div>
 
   <div class="mb-8 rounded-lg border border-amber-300/50 bg-amber-50 p-5 text-sm leading-6 text-amber-950 dark:border-amber-400/30 dark:bg-amber-950/30 dark:text-amber-100">
-    <div class="font-semibold">Live WakaTime is not connected.</div>
+    <div class="font-semibold">WakaTime charts are embedded from public share links.</div>
     <div class="mt-1">{{ $status.note }}</div>
     {{ with $status.last_updated }}
       <div class="mt-2 text-xs uppercase tracking-wide text-amber-800 dark:text-amber-200">Last updated: {{ . }}</div>
     {{ end }}
   </div>
+
+  {{ if $wakatime_embeds }}
+    <section class="mb-8 rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+      <div class="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-950 dark:text-white">WakaTime Activity</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+            Public share charts rendered as static embeds, without client-side API credentials.
+          </p>
+        </div>
+        {{ with $wakatime_profile_url }}
+          <a class="text-sm font-semibold text-primary-700 underline underline-offset-4 hover:text-primary-900 dark:text-primary-300 dark:hover:text-primary-200" href="{{ . }}" rel="noopener noreferrer" target="_blank">
+            {{ $wakatime.link_label | default "View WakaTime profile" }}
+          </a>
+        {{ end }}
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-2">
+        {{ range $embed := $wakatime_embeds }}
+          {{ $image_url := $embed.image_url | default "" }}
+          {{ if $image_url }}
+            {{ $title := $embed.title | default "WakaTime chart" }}
+            {{ $alt := $embed.alt | default $title }}
+            <figure class="overflow-hidden rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-950">
+              {{ if $wakatime_profile_url }}
+                <a href="{{ $wakatime_profile_url }}" rel="noopener noreferrer" target="_blank">
+                  <img class="h-auto w-full rounded bg-white" src="{{ $image_url }}" alt="{{ $alt }}" loading="lazy">
+                </a>
+              {{ else }}
+                <img class="h-auto w-full rounded bg-white" src="{{ $image_url }}" alt="{{ $alt }}" loading="lazy">
+              {{ end }}
+              {{ with $title }}
+                <figcaption class="mt-3 text-sm font-semibold text-slate-700 dark:text-slate-200">{{ . }}</figcaption>
+              {{ end }}
+            </figure>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
 
   <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
     {{ range $metrics }}

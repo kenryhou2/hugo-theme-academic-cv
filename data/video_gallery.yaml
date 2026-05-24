@@ -1,6 +1,6 @@
 source_label: Robotics demo gallery
-intro: Project-linked robotics videos and local demo media gathered from the portfolio content.
-missing_video_note: External video URLs are only shown where the project page already provides a real YouTube or Vimeo link.
+intro: Project-linked robotics videos and externally addressable demo media gathered from the portfolio content.
+missing_video_note: External source URLs are shown where real project demo media is available.
 entries:
   - title: EigenBot Modular Limb Demo
     project: /projects/eigenbot/
@@ -33,9 +33,9 @@ entries:
     project_label: MPPI Wheeled Quadruped
     summary: Whole-body MPPI controller for the Unitree Go2W in MuJoCo, with wheel-aware actions and rough-terrain simulation tasks.
     media_type: local-demo
+    video_url: https://raw.githubusercontent.com/kenryhou2/hugo-theme-academic-cv/85c445b12e10835991321015e0249291fbe51d16/content/projects/mppi-wheeled-quadruped/demo.gif
     thumbnail: demo.gif
     thumbnail_alt: Unitree Go2W wheeled quadruped using MPPI on rough terrain
-    missing_video: true
     tags:
       - MPPI
       - wheeled quadruped
@@ -45,9 +45,9 @@ entries:
     project_label: Sampling Based Planners
     summary: RRT, RRT-Connect, RRT*, and PRM motion-planning experiments for a high-DOF planar arm with collision checking.
     media_type: local-demo
+    video_url: https://raw.githubusercontent.com/kenryhou2/hugo-theme-academic-cv/85c445b12e10835991321015e0249291fbe51d16/content/projects/sampling-based-planners/demo.gif
     thumbnail: demo.gif
     thumbnail_alt: RRT planner moving a planar robot arm through an obstacle map
-    missing_video: true
     tags:
       - motion planning
       - RRT
@@ -57,9 +57,9 @@ entries:
     project_label: ARPA-E Pipe Inspection
     summary: Confined-space inspection work showing mapping misalignment and crawler-robot sensing challenges in pipe-scale environments.
     media_type: local-demo
+    video_url: https://raw.githubusercontent.com/kenryhou2/hugo-theme-academic-cv/85c445b12e10835991321015e0249291fbe51d16/content/projects/arpa-e-pipe-inspection/mapping_misalignment_GUI.gif
     thumbnail: mapping_misalignment_GUI.gif
     thumbnail_alt: ARPA-E pipe inspection mapping misalignment GUI
-    missing_video: true
     tags:
       - pipe inspection
       - mapping
@@ -69,9 +69,9 @@ entries:
     project_label: Boeing Material Deposition
     summary: Process-control research for ultra-large-format additive manufacturing using measured tool motion to adapt deposition timing.
     media_type: local-demo
+    video_url: https://raw.githubusercontent.com/kenryhou2/hugo-theme-academic-cv/85c445b12e10835991321015e0249291fbe51d16/content/projects/boeing-material-deposition/featured.gif
     thumbnail: featured.gif
     thumbnail_alt: Material deposition testbench demo animation
-    missing_video: true
     tags:
       - additive manufacturing
       - process control
