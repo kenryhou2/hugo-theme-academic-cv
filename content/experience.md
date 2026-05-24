@@ -20,6 +20,6 @@ sections:
       is_education_first: false
   - block: resume-skills
     content:
-      title: Skills & Hobbies
+      title: Skills Snapshot
       username: me
 ---

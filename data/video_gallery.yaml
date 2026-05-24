@@ -1,0 +1,78 @@
+source_label: Robotics demo gallery
+intro: Project-linked robotics videos and local demo media gathered from the portfolio content.
+missing_video_note: External video URLs are only shown where the project page already provides a real YouTube or Vimeo link.
+entries:
+  - title: EigenBot Modular Limb Demo
+    project: /projects/eigenbot/
+    project_label: EigenBot
+    summary: Modular robot limb experiments connecting force sensing, full-limb behavior, and early neural-controller work on repeated robot modules.
+    media_type: youtube
+    video_url: https://www.youtube.com/watch?v=O39SGxDwapY&t=1s
+    embed_url: https://www.youtube-nocookie.com/embed/O39SGxDwapY?start=1
+    thumbnail: featured.gif
+    thumbnail_alt: EigenBot modular robot demo animation
+    tags:
+      - modular robotics
+      - force sensing
+      - neural control
+  - title: Medusa Space Arms Demo
+    project: /projects/medusa-space-arms/
+    project_label: Medusa Space Arms
+    summary: Carriage-mounted space-arm testbed work for coordinated manipulation, sensing, and control on a physical robotics platform.
+    media_type: youtube
+    video_url: https://www.youtube.com/watch?v=_Ck2ZWJHlsQ
+    embed_url: https://www.youtube-nocookie.com/embed/_Ck2ZWJHlsQ
+    thumbnail: featured.gif
+    thumbnail_alt: Medusa space-arm robotics demo animation
+    tags:
+      - space robotics
+      - manipulation
+      - controls
+  - title: MPPI Wheeled Quadruped Simulation
+    project: /projects/mppi-wheeled-quadruped/
+    project_label: MPPI Wheeled Quadruped
+    summary: Whole-body MPPI controller for the Unitree Go2W in MuJoCo, with wheel-aware actions and rough-terrain simulation tasks.
+    media_type: local-demo
+    thumbnail: demo.gif
+    thumbnail_alt: Unitree Go2W wheeled quadruped using MPPI on rough terrain
+    missing_video: true
+    tags:
+      - MPPI
+      - wheeled quadruped
+      - MuJoCo
+  - title: Sampling-Based Planner Animation
+    project: /projects/sampling-based-planners/
+    project_label: Sampling Based Planners
+    summary: RRT, RRT-Connect, RRT*, and PRM motion-planning experiments for a high-DOF planar arm with collision checking.
+    media_type: local-demo
+    thumbnail: demo.gif
+    thumbnail_alt: RRT planner moving a planar robot arm through an obstacle map
+    missing_video: true
+    tags:
+      - motion planning
+      - RRT
+      - C++
+  - title: ARPA-E Pipe Inspection Mapping
+    project: /projects/arpa-e-pipe-inspection/
+    project_label: ARPA-E Pipe Inspection
+    summary: Confined-space inspection work showing mapping misalignment and crawler-robot sensing challenges in pipe-scale environments.
+    media_type: local-demo
+    thumbnail: mapping_misalignment_GUI.gif
+    thumbnail_alt: ARPA-E pipe inspection mapping misalignment GUI
+    missing_video: true
+    tags:
+      - pipe inspection
+      - mapping
+      - sensing
+  - title: Boeing Material Deposition Testbench
+    project: /projects/boeing-material-deposition/
+    project_label: Boeing Material Deposition
+    summary: Process-control research for ultra-large-format additive manufacturing using measured tool motion to adapt deposition timing.
+    media_type: local-demo
+    thumbnail: featured.gif
+    thumbnail_alt: Material deposition testbench demo animation
+    missing_video: true
+    tags:
+      - additive manufacturing
+      - process control
+      - sensing

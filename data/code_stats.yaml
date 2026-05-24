@@ -1,0 +1,51 @@
+status:
+  source_label: Static portfolio snapshot
+  last_updated: 2026-05-22
+  live_wakatime: false
+  note: Live WakaTime data is not connected. This dashboard intentionally avoids client-side API keys and can be updated from WakaTime embeddable JSON later.
+
+metrics:
+  - label: Published code projects
+    value: "10"
+    detail: Project pages currently published on the portfolio.
+  - label: Client-side secrets
+    value: "0"
+    detail: No WakaTime API key is embedded in the website.
+  - label: Data source
+    value: "1"
+    detail: Dashboard values are centralized in data/code_stats.yaml.
+  - label: WakaTime fields needed
+    value: "3"
+    detail: Username, public embeddable JSON URL, and preferred stats range.
+
+stack_snapshot:
+  title: Portfolio Stack Snapshot
+  description: Static emphasis from the published project portfolio, not measured coding time.
+  items:
+    - name: C++ planning and search
+      value: 4
+      max: 10
+      detail: A*, sampling-based planners, symbolic planning, and robotics coursework.
+    - name: Python simulation and tooling
+      value: 3
+      max: 10
+      detail: MPPI simulation, manipulation assignments, and queue-worker tooling.
+    - name: Robotics systems and embedded work
+      value: 3
+      max: 10
+      detail: EigenBot, Medusa, and pipe-inspection hardware or sensing work.
+    - name: Manufacturing process control
+      value: 1
+      max: 10
+      detail: Boeing material-deposition research.
+
+integration_path:
+  - title: Static dashboard scaffold
+    status: Complete
+    detail: Hugo renders a dashboard from checked-in data without external calls.
+  - title: WakaTime embeddable JSON
+    status: Needed
+    detail: Add a public embeddable JSON URL to replace or supplement the static snapshot.
+  - title: Server-side API sync
+    status: Optional
+    detail: If private API stats are preferred, fetch them during build or from a trusted server, never in browser code.

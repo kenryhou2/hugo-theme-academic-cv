@@ -33,6 +33,25 @@ sections:
       avatar:
         size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
+  - block: skills-matrix
+    id: skills
+    content:
+      compact: true
+      title: Skills & Expertise
+      subtitle: Evidence-backed robotics, software, and hardware strengths drawn from the portfolio, resume, and author profile.
+    design:
+      spacing:
+        padding: ["4rem", "0", "4rem", "0"]
+  - block: robotics-demos
+    id: demos
+    content:
+      compact: true
+      count: 4
+      title: Robotics Demos
+      subtitle: Project-linked videos and local demo media for robotics platforms, simulation, and planning work.
+    design:
+      spacing:
+        padding: ["4rem", "0", "4rem", "0"]
   - block: collection
     content:
       title: Featured Projects
