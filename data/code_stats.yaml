@@ -23,9 +23,9 @@ wakatime:
   profile_url: "https://wakatime.com/@ea210b30-ed86-4643-a00c-1a369bb5f0f9"
   link_label: View WakaTime profile
   embeds:
-    - title: Coding Activity
-      image_url: "https://wakatime.com/share/@ea210b30-ed86-4643-a00c-1a369bb5f0f9/be946e8b-5fb5-4505-8558-34791c74469a.svg"
-      alt: "WakaTime coding activity profile stats"
     - title: Coding Languages
-      image_url: "https://wakatime.com/share/@ea210b30-ed86-4643-a00c-1a369bb5f0f9/28e477f6-caf6-47c1-851a-82d2e2abf0eb.svg"
+      image_url: "https://wakatime.com/share/@ea210b30-ed86-4643-a00c-1a369bb5f0f9/be946e8b-5fb5-4505-8558-34791c74469a.svg"
       alt: "WakaTime coding languages profile stats"
+    - title: Coding Activity
+      image_url: "https://wakatime.com/share/@ea210b30-ed86-4643-a00c-1a369bb5f0f9/28e477f6-caf6-47c1-851a-82d2e2abf0eb.svg"
+      alt: "WakaTime coding activity profile stats"

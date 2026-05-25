@@ -32,7 +32,7 @@
         {{ end }}
       </div>
 
-      <div class="grid gap-6 lg:grid-cols-2">
+      <div class="grid gap-6">
         {{ range $embed := $wakatime_embeds }}
           {{ $image_url := $embed.image_url | default "" }}
           {{ if $image_url }}
