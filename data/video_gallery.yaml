@@ -2,6 +2,18 @@ source_label: Robotics demo gallery
 intro: Project-linked robotics videos and externally addressable demo media gathered from the portfolio content.
 missing_video_note: External source URLs are shown where real project demo media is available.
 entries:
+  - title: DeformX Rope-Swinging Trials
+    project: /projects/deformx/
+    project_label: DeformX
+    summary: Co-simulation framework for deformable linear objects combining Cosserat rod physics with NVIDIA Isaac Sim, demonstrated by a sim-trained rope-swinging policy hitting targets on a UR5e manipulator.
+    media_type: local-demo
+    video_url: /projects/deformx/hit_apple_trials.mp4
+    thumbnail: deformX_cover.png
+    thumbnail_alt: DeformX co-simulation framework cover image
+    tags:
+      - deformable linear objects
+      - Cosserat rods
+      - Isaac Sim
   - title: EigenBot Modular Limb Demo
     project: /projects/eigenbot/
     project_label: EigenBot
