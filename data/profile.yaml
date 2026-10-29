@@ -1,0 +1,23 @@
+name: Henry Kou
+email: hkou@andrew.cmu.edu
+role: Robotics · Carnegie Mellon University
+resume: assets/files/Henry_Kou_Resume_S25.pdf
+links:
+  - label: GitHub
+    url: https://github.com/kenryhou2
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/henrykou
+  - label: YouTube
+    url: https://www.youtube.com/@Kenry
+updates:
+  - date: Jun 2026
+    datetime: '2026-06'
+    text: 'DeformX was accepted to IROS 2026.'
+    target: '#deformx-iros-2026'
+  - date: '2025'
+    datetime: '2025'
+    text: 'Our work on distributed neural locomotion control appeared at ICRA 2025.'
+    target: '#dnlc-robust-locomotion'
+  - date: Aug 2024
+    datetime: '2024-08'
+    text: 'Started the M.S. in Robotics program at Carnegie Mellon University.'

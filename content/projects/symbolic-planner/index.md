@@ -1,30 +1,29 @@
 ---
 title: Symbolic Planner
 date: 2026-05-06
-summary: A C++ STRIPS-style symbolic planner for grounding action schemas and searching over Blocks World, Blocks Triangle, and robot-fire-extinguisher planning domains.
+summary: A STRIPS-style planner that grounds action schemas and searches over Blocks World and robot coordination tasks.
 links:
-  - type: site
-    url: https://github.com/kenryhou2/16782_HW3
+- type: site
+  url: https://github.com/kenryhou2/16782_HW3
 tags:
-  - symbolic planning
-  - STRIPS
-  - task planning
-  - Blocks World
-  - heuristic search
-  - C++
-  - CMake
-  - robotics
-  - AI planning
+- symbolic planning
+- STRIPS
+- task planning
+- Blocks World
+- heuristic search
+- C++
+- CMake
+- robotics
+- AI planning
+profile:
+  image: symbolic.svg
+  alt: Illustration of a Blocks World plan rearranging three blocks
+  lab: Motion-planning coursework
+  venue: Course project
+  date_label: Updated May 2026
+  order: 7
+  people:
+  - Henry Kou
 ---
 
-I built this symbolic planner to make classical AI planning concrete. Instead of commanding robot trajectories directly, the planner reasons over facts such as `Clear(A)`, `On(A, B)`, or domain-specific predicates for a robot-fire-extinguisher task. It parses compact domain files into symbols, grounded initial facts, goal facts, and action schemas with positive and negated preconditions and effects.
-
-The planner grounds action schemas by enumerating ordered symbol tuples of the required arity, substitutes them into each action's preconditions and effects, filters actions whose grounded preconditions are satisfied in the current state, and applies add/delete effects to generate successor states. Search uses an OPEN priority queue and CLOSED state set, with parent pointers for plan reconstruction once all goal facts are reached.
-
-The repository includes several planning environments: standard Blocks World problems using `MoveToTable` and `Move`; a Blocks Triangle variant with `Block`, `Triangle`, `NotTable`, `Clear`, and `On` predicates; and a FireExtinguisher domain where a robot and quadrotor coordinate movement, landing, charging, water refill, and repeated pour actions to reach `ExtThree(F)`.
-
-The implementation exposes heuristic modes for Dijkstra-style search (`h = 0`), missing-goal-count guidance, delete-effect penalties, and a combined heuristic. This makes the project a small testbed for seeing how much a heuristic can help when the branching factor comes from grounded actions rather than grid neighbors.
-
-**Sources I leaned on:** Fikes and Nilsson's STRIPS paper for add/delete-list planning; Bonet and Geffner's HSP work for heuristic planning; and Russell and Norvig's AI planning chapters for the connection between symbolic search and robotics task planning.
-
-**Keywords:** symbolic planning, STRIPS-style planning, grounded actions, action schemas, preconditions, add/delete effects, Blocks World, Blocks Triangle, FireExtinguisher domain, heuristic search, Dijkstra search, priority queue, state-space search, plan reconstruction, C++14, CMake.
+A STRIPS-style planner that grounds action schemas and searches over Blocks World and robot coordination tasks.

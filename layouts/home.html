@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.Params.description }}">
+  <meta name="theme-color" content="#ffffff">
+  <title>{{ site.Title }} · Robotics</title>
+  <link rel="canonical" href="{{ site.Home.Permalink }}">
+  <meta property="og:title" content="Henry Kou · Robotics">
+  <meta property="og:description" content="{{ site.Params.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.Home.Permalink }}">
+  <meta property="og:image" content="{{ "images/profile/portrait.webp" | absURL }}">
+  {{ $css := resources.Get "css/profile.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ $js := resources.Get "js/profile.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to content</a>
+  <header class="site-header">
+    <nav aria-label="Main navigation">
+      {{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+    </nav>
+  </header>
+  <main>
+    {{ $profile := hugo.Data.profile }}
+    <section class="intro" id="home" aria-labelledby="name">
+      <img class="portrait" src="{{ "images/profile/portrait.webp" | relURL }}" alt="Henry Kou" width="640" height="640" fetchpriority="high">
+      <div class="biography">
+        <h1 id="name">{{ $profile.name }}</h1>
+        <p class="affiliation">{{ $profile.role }}</p>
+        <a class="email" href="mailto:{{ $profile.email }}">{{ $profile.email }}</a>
+        <p>I work on robots that connect control and planning with the realities of hardware. My research at Carnegie Mellon University’s <a href="http://biorobotics.ri.cmu.edu/index.php">Biorobotics Lab</a> spans sensing, embedded systems, and robotic manipulation, working with Howie Choset and Lu Li.</p>
+        <p>My background is in electrical engineering at UCLA and power electronics at Texas Instruments. I’m interested in reliable autonomy, from the algorithms that guide a robot to the sensors and circuits that make it work.</p>
+        <ul class="profile-links" aria-label="Résumé and profiles">
+          <li><a href="{{ $profile.resume | relURL }}">Résumé <span class="file-type">PDF</span></a></li>
+          {{ range $profile.links }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section updates" id="updates" aria-labelledby="updates-heading">
+      <h2 id="updates-heading">Updates</h2>
+      <ul class="news-list">
+        {{ range $profile.updates }}
+        <li><time datetime="{{ .datetime }}">{{ .date }}</time><span>{{ with .target }}<a href="{{ . }}">{{ end }}{{ .text }}{{ if .target }}</a>{{ end }}</span></li>
+        {{ end }}
+      </ul>
+    </section>
+
+    <section class="section" id="research" aria-labelledby="research-heading">
+      <h2 id="research-heading">Research</h2>
+      {{ $publications := where site.RegularPages "Section" "publications" }}
+      {{ range sort $publications "Params.profile.order" }}
+        {{ if not .Params.profile.technical }}{{ partial "profile/entry.html" . }}{{ end }}
+      {{ end }}
+      <details class="technical-publications" id="technical-publications">
+        <summary>Earlier technical publications <span>({{ len (where $publications "Params.profile.technical" true) }})</span></summary>
+        {{ range $publications.ByDate.Reverse }}
+          {{ if .Params.profile.technical }}{{ partial "profile/entry.html" . }}{{ end }}
+        {{ end }}
+      </details>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <p class="section-note">Robotics systems, planning, and tools. Related publications are listed above.</p>
+      {{ range sort (where site.RegularPages "Section" "projects") "Params.profile.order" }}
+        {{ if not .Params.profile_hidden }}{{ partial "profile/entry.html" . }}{{ end }}
+      {{ end }}
+    </section>
+  </main>
+  <footer>
+    <span>Henry Kou</span>
+    <span><a href="{{ $profile.resume | relURL }}">Résumé</a><span class="separator" aria-hidden="true"> / </span><a href="#home">Back to top ↑</a></span>
+  </footer>
+</body>
+</html>

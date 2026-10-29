@@ -1,0 +1,21 @@
+{{ $target := "home" }}
+{{ if eq .Section "projects" }}{{ $target = "projects" }}{{ end }}
+{{ if eq .Section "publications" }}{{ $target = "research" }}{{ end }}
+{{ if .IsPage }}
+  {{ if or (eq .Section "projects") (eq .Section "publications") }}{{ $target = path.Base .File.Dir }}{{ end }}
+{{ end }}
+{{ with .Params.profile_target }}{{ $target = . }}{{ end }}
+{{ if eq .RelPermalink ("demos/" | relURL) }}{{ $target = "projects" }}{{ end }}
+{{ $url := printf "%s#%s" site.Home.RelPermalink $target }}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ $url }}">
+  <link rel="canonical" href="{{ printf "%s#%s" site.Home.Permalink $target }}">
+  <title>{{ .Title }} · Henry Kou</title>
+</head>
+<body><p>This content is now on <a href="{{ $url }}">Henry Kou’s academic profile</a>.</p></body>
+</html>

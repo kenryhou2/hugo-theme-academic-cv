@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found · Henry Kou</title>
+  {{ $css := resources.Get "css/profile.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body><main class="section"><h1>Page not found</h1><p>This page may have moved. <a href="{{ site.Home.RelPermalink }}">Return to Henry Kou’s profile</a>.</p></main></body>
+</html>

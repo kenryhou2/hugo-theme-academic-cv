@@ -1,0 +1,30 @@
+{{ $info := .Params.profile }}
+{{ $slug := path.Base .File.Dir }}
+{{ $image := $info.image }}
+{{ if not (strings.HasSuffix $image ".svg") }}{{ $image = printf "%s.webp" $image }}{{ end }}
+<article class="entry" id="{{ $slug }}" aria-labelledby="{{ $slug }}-title">
+  <img class="entry-image" src="{{ printf "images/profile/%s" $image | relURL }}" alt="{{ $info.alt }}" width="400" height="260" loading="lazy" decoding="async">
+  <div class="entry-body">
+    <h3 id="{{ $slug }}-title">{{ .Title }}</h3>
+    <p class="authors">
+      {{ $people := .Params.authors | default $info.people }}
+      {{ range $index, $person := $people }}{{ if $index }}, {{ end }}{{ if or (eq $person "me") (eq $person "Henry Kou") }}<strong>Henry Kou</strong>{{ else }}{{ $person }}{{ end }}{{ end }}
+    </p>
+    <p class="venue">{{ $info.venue }}{{ if not (in $info.venue $info.date_label) }}<span aria-hidden="true"> · </span>{{ $info.date_label }}{{ end }}</p>
+    <p class="lab">{{ $info.lab }}</p>
+    <p class="overview">{{ .Params.summary }}</p>
+    {{ $links := $info.links | default .Params.links }}
+    {{ with $links }}
+    <ul class="entry-links" aria-label="Resources for {{ $.Title }}">
+      {{ range . }}
+        {{ $label := .label }}
+        {{ if not $label }}
+          {{ $label = "Project" }}
+          {{ if eq .type "video" }}{{ $label = "Video" }}{{ else if or (eq .type "source") (eq .type "pdf") }}{{ $label = "Publication" }}{{ else if in .url "github.com" }}{{ $label = "Code" }}{{ end }}
+        {{ end }}
+        <li><a href="{{ if hasPrefix .url "/" }}{{ strings.TrimPrefix "/" .url | relURL }}{{ else }}{{ .url }}{{ end }}">{{ $label }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</article>
