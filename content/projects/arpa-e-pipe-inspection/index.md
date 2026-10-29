@@ -22,6 +22,10 @@ profile:
   order: 2
   people:
   - Henry Kou
+  - Tina Tian
+  - Avaneesh Murugesan
+  - Lu Li
+  - Howie Choset
 ---
 
 Confined-space pipe inspection robotics work with crawler hardware, mapping, and misalignment visualization.

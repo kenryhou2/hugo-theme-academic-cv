@@ -17,7 +17,7 @@ stack_snapshot:
     - name: Manufacturing process control
       value: 1
       max: 10
-      detail: Boeing material-deposition research.
+      detail: Aerospace inkjetting research.
 
 wakatime:
   profile_url: "https://wakatime.com/@ea210b30-ed86-4643-a00c-1a369bb5f0f9"

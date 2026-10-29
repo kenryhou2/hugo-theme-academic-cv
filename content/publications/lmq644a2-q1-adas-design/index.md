@@ -1,7 +1,7 @@
 ---
 title: User's Guide LMQ644A2-Q1 6-Phase Buck Regulator Design for Automotive ADAS Applications
 authors:
-- E. Lee
+- Eric Lee
 - me
 date: '2023-07-01T00:00:00Z'
 publishDate: '2026-05-09T00:00:00Z'

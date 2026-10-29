@@ -2,7 +2,7 @@
 title: 'EVM User''s Guide: TPSM64406EVM TPSM64406EVM 36-V, Dual, 3-A Output, Synchronous, Buck Module'
 authors:
 - me
-- P. Shalton
+- Patrick Shalton
 date: '2023-11-01T00:00:00Z'
 publishDate: '2026-05-09T00:00:00Z'
 publication_types:

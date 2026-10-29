@@ -1,7 +1,7 @@
 ---
 title: TPSM64404/06 3-V to 36-V, Low IQ, Dual 2/3-A Module Optimized for Power Density and Low EMI
 authors:
-- M. Davis-Marsh
+- Marc Davis-Marsh
 - me
 date: '2023-12-01T00:00:00Z'
 publishDate: '2026-05-09T00:00:00Z'

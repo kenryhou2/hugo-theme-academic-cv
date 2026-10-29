@@ -32,8 +32,8 @@
         <h1 id="name">{{ $profile.name }}</h1>
         <p class="affiliation">{{ $profile.role }}</p>
         <a class="email" href="mailto:{{ $profile.email }}">{{ $profile.email }}</a>
-        <p>I work on robots that connect control and planning with the realities of hardware. My research at Carnegie Mellon University’s <a href="http://biorobotics.ri.cmu.edu/index.php">Biorobotics Lab</a> spans sensing, embedded systems, and robotic manipulation, working with Howie Choset and Lu Li.</p>
-        <p>My background is in electrical engineering at UCLA and power electronics at Texas Instruments. I’m interested in reliable autonomy, from the algorithms that guide a robot to the sensors and circuits that make it work.</p>
+        <p>I'm currently a staff researcher at Carnegie Mellon University's Robotics Institute and <a href="http://biorobotics.ri.cmu.edu/index.php">Biorobotics Lab</a>, focusing on robotic perception, control, and sensor fusion. Previously, I was an MS in Robotics at CMU under Dr. Howie Choset, where I worked on real-time state estimation for systems supporting aerospace and legged robotics applications.</p>
+        <p>Before CMU, I was an Analog Applications Engineer at Texas Instruments, developing and testing power electronics hardware. I enjoy combining my hardware and software experience to build robotic systems that work in the real world.</p>
         <ul class="profile-links" aria-label="Résumé and profiles">
           <li><a href="{{ $profile.resume | relURL }}">Résumé <span class="file-type">PDF</span></a></li>
           {{ range $profile.links }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}

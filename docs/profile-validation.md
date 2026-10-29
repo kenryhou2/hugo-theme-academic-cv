@@ -1,5 +1,23 @@
 # Academic profile validation — 2026-10-29
 
+## CV, collaborator, and deployment-gate follow-up
+
+The October 29 follow-up reproduced a local failure using the parent repository's committed checker against the updated site: `FAIL: Real résumé is not linked` and `FAIL: Résumé is not a PDF`. That checker hard-coded the deleted Spring 2025 PDF. The working-tree fix follows the rendered résumé links, validates a local PDF, rejects the starter demo, and requires consistent header/footer links. Nine regression tests cover the original, current, future, and encoded filenames, missing/invalid PDFs, missing or inconsistent links, demo/remote URLs, and paths outside the output directory. The deployment workflow runs these tests before checking the built profile. The parent `.gitmodules` now targets the owner's fork containing the site commits instead of upstream HugoBlox.
+
+The supplied October CV and owner's Pipe Inspection names were used to update seven credit lists. Boeing Material Deposition is displayed as Aerospace Inkjetting; its directory, anchor, media URLs, and legacy redirect remain unchanged. See README content provenance for the related-paper credit sources.
+
+Follow-up verification passed:
+
+- Offline Hugo 0.161.1 production build with the deployment base URL and `--panicOnWarning`.
+- All nine résumé regression tests and the profile checker: 15 entries, 16 images, 23 legacy redirects.
+- Browser assertions for the exact seven credit lists, new project title, and CV links; the published-output PDF matches the supplied source byte for byte.
+- Browser widths 320, 390, 768, and 1440: no horizontal overflow; updated entry images load.
+- Old `/projects/boeing-material-deposition/` URL reaches the renamed entry.
+- axe-core WCAG 2 A/AA, 2.1 AA, and 2.2 AA: zero violations with technical publications expanded. No browser exceptions or external page requests; non-loopback page requests were blocked.
+- Parent and source `git diff --check`.
+
+During the authorized release follow-up, GitHub Actions run `40944644390` confirmed the same résumé-check failure. The owner fork’s `update-hugo-site` branch contains the existing site commit `15d08ce`, and the parent remote matches local `main` at `d5b8c37`. The biography now uses the owner’s supplied staff-researcher text; the profile role and page metadata match it. Release results are recorded in the parent repository’s task work journal. The reviews below describe the earlier redesign, not a new observer-agent review of this follow-up.
+
 ## Independent observer reviews
 
 | Round | Aesthetics | Technical correctness | Outcome |

@@ -20,7 +20,18 @@ profile:
   date_label: Updated May 2026
   order: 3
   people:
+  - Geordan Gutow
+  - Ben Spin
+  - Anoop Bhat
+  - Andrew Orekhov
+  - Beau Pollard
+  - Ye Jin
+  - Ralph Boirum
   - Henry Kou
+  - Shricharan Shastry
+  - Burhanuddin Shirose
+  - Matt Travers
+  - Howie Choset
 ---
 
 Space-arm robotics work using a carriage-mounted arm testbed for coordinated motion, sensing, and manipulation research.

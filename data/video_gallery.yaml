@@ -76,9 +76,9 @@ entries:
       - pipe inspection
       - mapping
       - sensing
-  - title: Boeing Material Deposition Testbench
+  - title: Aerospace Inkjetting Testbench
     project: /projects/boeing-material-deposition/
-    project_label: Boeing Material Deposition
+    project_label: Aerospace Inkjetting
     summary: Process-control research for ultra-large-format additive manufacturing using measured tool motion to adapt deposition timing.
     media_type: local-demo
     video_url: https://raw.githubusercontent.com/kenryhou2/hugo-theme-academic-cv/85c445b12e10835991321015e0249291fbe51d16/content/projects/boeing-material-deposition/featured.gif

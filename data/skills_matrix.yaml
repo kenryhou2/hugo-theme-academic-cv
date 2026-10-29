@@ -33,11 +33,11 @@ categories:
             url: "/projects/manipulation-course-assignments/"
       - name: "Control and optimization"
         scope: "Model Predictive Path Integral control, sampling-based MPC, whole-body locomotion costs, process-control timing, PID, and linear feedback coursework."
-        evidence: "Shown in MPPI quadruped work, Boeing material deposition research, EigenBot research, and resume coursework/projects."
+        evidence: "Shown in MPPI quadruped work, aerospace inkjetting research, EigenBot research, and resume coursework/projects."
         links:
           - label: "MPPI quadruped"
             url: "/projects/mppi-wheeled-quadruped/"
-          - label: "Boeing deposition"
+          - label: "Aerospace Inkjetting"
             url: "/projects/boeing-material-deposition/"
           - label: "EigenBot"
             url: "/projects/eigenbot/"
